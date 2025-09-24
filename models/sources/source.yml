@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: source_bronze
+    database: uberproject
+    schema: bronze
+    tables:
+      - name: trips
+
+  - name: source_silver
+    database: uberproject
+    schema: silver
+    tables:
+      - name: customers
+      - name: locations
+      - name: drivers
+      - name: payments
+      - name: vehicles
