@@ -1,4 +1,4 @@
-### Uber Project with dbt
+# Uber Project with dbt
 
 This project demonstrates how to build a Data Lakehouse Medallion Architecture (Bronze, Silver, Gold Layers) on Databricks + dbt. It integrates Spark Structured Streaming, Dynamic Injection, and dbt Snapshots to achieve an end-to-end pipeline from raw sources → curated transformations → analytics-ready models.
 
@@ -69,6 +69,8 @@ In dbt, we organize models into models/silver and models/gold for cleaner design
 * snapshots
   * Implement SCD (Slowly Changing Dimension) tracking, either in `snapshots/` folder or configured in `dbt_project.yml`.
 
+--- 
+
 ### ⚙️ Technologies
 
 * Databricks (Delta Lake, Catalog, Volumes)
@@ -82,10 +84,10 @@ In dbt, we organize models into models/silver and models/gold for cleaner design
 ### 📊 Data Flow
 ```mermaid
 flowchart TD
-    A[Source Volume (Raw Data)] -->|Structured Streaming| B[Bronze Layer (Incremental Load)]
-    B -->|UPSERT + Transformation| C[Silver Layer (Curated Tables)]
-    C -->|dbt Models + Snapshots| D[Gold Layer (Analytics Ready)]
-    D --> E[BI / Dashboard / ML Models]
+    A["Source Volume (Raw Data)"] -->|Structured Streaming| B["Bronze Layer (Incremental Load)"]
+    B -->|UPSERT + Transformation| C["Silver Layer (Curated Tables)"]
+    C -->|dbt Models + Snapshots| D["Gold Layer (Analytics Ready)"]
+    D --> E["BI / Dashboard / ML Models"]
 ```
 
 ### 📝 Summary
